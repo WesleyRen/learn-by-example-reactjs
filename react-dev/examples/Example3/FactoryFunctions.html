@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://fb.me/react-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <style>
+    .container {
+      color: #de1515;
+    }
+  </style>
+</head>
+<body>
+  <div id="react-app">
+  </div>
+  <script>
+    var listItem1 = React.DOM.li({key: 'item-1'}, 'Albus Dumbledor');
+    var listItem2 = React.DOM.li({key: 'item-2'}, 'Dolores Umbridge');
+    var listItem3 = React.DOM.li({key: 'item-3'}, 'Sererus Snape');
+    var listItem4 = React.DOM.li({key: 'item-4'}, 'Minerva McGonagall');
+
+    var reactFragment = [listItem1, listItem2, listItem3, listItem4];
+
+    var listElement = React.DOM.ul({className: 'container'}, reactFragment);
+
+    ReactDOM.render(listElement, document.getElementById('react-app'));
+  </script>
+</body>
+</html>

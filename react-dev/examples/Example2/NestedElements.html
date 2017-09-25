@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://fb.me/react-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <style>
+    .container {
+      color: royalblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="react-app">
+  </div>
+  <script>
+    var headerElement = React.createElement(
+      'h3', {id: 'header-id', key: 'header'}, 'Hello React World!');
+
+    var paragraphElement = React.createElement('p', {key: 'paragraph'},
+      'Components, composition, virtual DOM, and so much more - hurrah!');
+
+    var reactFragment = [headerElement, paragraphElement];
+
+    var sectionElement = React.createElement(
+      'section', {className: 'container'}, reactFragment);
+      
+    ReactDOM.render(sectionElement, document.getElementById('react-app'));
+  </script>
+</body>
+</html>
