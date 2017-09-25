@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <style>
+        .container {
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+<div id="react-app">
+
+</div>
+<script>
+	// Note that we pass in attributes for the DOM element as the
+	// second argument to the createElement call
+	var headerElement = React.createElement(
+		'h3', {id: 'header-id', key: 'header'}, 'Hello React World!');
+
+	// This is a different React element representing a paragraph in
+	// the DOM
+	var paragraphElement = React.createElement('p', {key: 'paragraph'},
+	    'Components, composition, virtual DOM, and so much more - hurrah!');
+
+	// A React fragment is an array of React nodes
+	// Each React fragment in the array should have a key attribute so
+	// React can uniquely identify the elements (more on this later)
+	var reactFragment = [headerElement, paragraphElement];
+
+	// This section React element has the header and the paragraph
+	// as children
+	// This has a CSS class applied to the DOM element
+	// Note that the 'class' attribute is specified as 'className'
+	// This is because 'class' is a reserved keyword in JS 
+	var sectionElement = React.createElement(
+		'section', {className: 'container'}, reactFragment);
+
+	// Render the section as a child of the react-app element
+	ReactDOM.render(sectionElement, document.getElementById('react-app'));
+</script>
+</body>
+</html>

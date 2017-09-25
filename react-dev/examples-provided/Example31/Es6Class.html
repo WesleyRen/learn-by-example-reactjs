@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+
+    <style>
+        .contents {
+            color: lightseagreen;
+            margin: 12px;
+            padding: 12px;
+            border: 1px solid green;
+            width: 200px;
+        }
+        .contentsES6 {
+            color: darkred;
+            margin: 12px;
+            padding: 12px;
+            border: 1px solid indianred;
+            width: 200px;
+        }
+        .button {
+            display: block;
+            text-align: center;
+            border: solid 1px orangered;
+            color: black;
+            width: 100px;
+            margin: 0 auto;
+            cursor: pointer;
+            line-height: 26px;
+            font-size: 14px;
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="outer1" class="contents">
+</div>
+<div id="outer2" class="contentsES6">
+</div>
+<script type='text/babel' src="ES6Class.js">
+</script>
+</body>
+</html>

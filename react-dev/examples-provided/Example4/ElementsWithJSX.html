@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.14.0/babel.min.js"></script>
+
+    <style>
+        .container {
+            color: #de1515;
+        }
+    </style>
+</head>
+<body>
+<div id="react-app">
+
+</div>
+<script type='text/babel'>
+    // Notice how we assign something which looks like XML to a 
+    // variable!
+    // This is JSX, an XML like syntax extension to ECMAscript
+    // This is not meant to be implemented by browsers and
+    // instead is compiled to Javascript by Babel
+	var listOfHogwartsHeadmasters = 
+		<ul className='container'>
+			<li key='item-1'>Albus Dumbledore</li>
+			<li key='item-2'>Dolores Umbridge</li>
+			<li key='item-3'>Severus Snape</li>
+			<li key='item-4'>Minerva McGonagall</li>
+		</ul>
+
+	// Render the JSX element to the DOM just like you would a
+	// React element
+	ReactDOM.render(listOfHogwartsHeadmasters, 
+		document.getElementById('react-app'));
+</script>
+</body>
+</html>

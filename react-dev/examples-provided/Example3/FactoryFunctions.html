@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+	<style>
+		.container {
+			color: #de1515;
+		}
+	</style>
+</head>
+<body>
+<div id="react-app">
+
+</div>
+<script>
+	// React has built in factory functions which allow us to create
+	// specific DOM elements
+	// Other examples are React.DOM.div() and React.DOM.ol() etc.
+	var listItem1 = React.DOM.li({key: 'item-1'}, 'Albus Dumbledore');
+	var listItem2 = React.DOM.li({key: 'item-2'}, 'Dolores Umbridge');
+	var listItem3 = React.DOM.li({key: 'item-3'}, 'Severus Snape');
+	var listItem4 = React.DOM.li({key: 'item-4'}, 'Minerva McGonagall');
+
+	// The React fragment holds the list item elements
+	var reactFragment = [listItem1, listItem2, listItem3, listItem4];
+
+	// Create a list element with the items within it
+	var listElement = React.DOM.ul({className: 'container'}, reactFragment);
+
+	// Render it to the DOM
+	ReactDOM.render(listElement, document.getElementById('react-app'));
+</script>
+</body>
+</html>

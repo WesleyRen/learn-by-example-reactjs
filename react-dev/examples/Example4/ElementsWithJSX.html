@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://fb.me/react-0.14.3.js"></script>
+  <script src="https://fb.me/react-dom-0.14.3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+  <style>
+    .container {
+      color: #de1515;
+    }
+  </style>
+</head>
+<body>
+  <div id="react-app">
+  </div>
+  <script type='text/babel'>
+    var listOfHogwartsHeadmasters = (
+      <ul className='container'>
+        <li key='item-1'>Albus Dumbledor</li>
+        <li key='item-2'>Dolores Umbridge</li>
+        <li key='item-3'>Sererus Snape</li>
+        <li key='item-4'>Minerva McGonagall</li>
+      </ul>
+    );
+
+    ReactDOM.render(listOfHogwartsHeadmasters, document.getElementById('react-app'));
+  </script>
+</body>
+</html>

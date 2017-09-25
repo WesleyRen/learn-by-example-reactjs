@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+</head>
+<body>
+<div id="react-app">
+
+</div>
+<script>
+	// React.createElement sets up a React element (not a DOM element)
+	var headerReactEl = React.createElement('h3', {}, 'Hello React World!');
+
+	// This renders the React element into the DOM (mounts the element to the DOM)
+	// The element will be a child of the element with id react-app
+	ReactDOM.render(headerReactEl, document.getElementById('react-app'));
+
+	// React elements are baHEsically one type of React nodes
+</script>
+</body>
+</html>
+
