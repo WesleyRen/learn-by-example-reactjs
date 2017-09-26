@@ -6,11 +6,15 @@ var Counter = React.createClass({
   },
 
   incrementCounter: function() {
-    this.setState(function(prevState, props) {
-      return {
-        counter: prevState.counter + props.increment
-      }
-    });
+    // this.setState(function(prevState, props) {
+    //   return {
+    //     counter: prevState.counter + props.increment
+    //   }
+    // });
+    /* using lambda instead */
+    this.setState((prevState, props) => ({
+      counter: prevState.counter + props.increment
+    }));
   },
 
   render: function() {
