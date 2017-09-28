@@ -1,9 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
+import Box from './BoxComponent.jsx';
 
 class App extends React.Component {
   render() {
-    return <p> Hello React! </p>;
+    return (<Box />);
   }
 }
 
