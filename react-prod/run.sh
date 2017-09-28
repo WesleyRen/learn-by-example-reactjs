@@ -1,6 +1,7 @@
 # Build your first ReactJS project:
 npm init
 npm i webpack -S
+npm install babel-core babel-loader --save-dev
 
 # 1. Create webpack.config.js with following content
 echo -e "
@@ -15,7 +16,14 @@ var config = {
 	output: {
 	path: BUILD_DIR,
 	filename: 'build.js'
-	}
+	},
+  module : {
+    loaders : [{
+      test : /\.jsx?/,
+      include : APP_DIR,
+      loader : 'babel-loader'
+    }]
+  }
 };
 
 module.exports = config;
@@ -38,8 +46,7 @@ echo -e '
 
 # 3. Create index.jsx file:
 [ -d app ] || mkdir app
-echo -e "console.log('Hello World!');
-" > app/index.jsx
+[ -f app/index.jsx ] || echo -e "console.log('Hello World\!');" > app/index.jsx
 
 # 4. Run webpack
 webpack -d # use -p for production.
@@ -61,31 +68,5 @@ echo '
 	"presets" : ["es2015", "react"]
 }
 ' > .babelrc
-
-
-echo -e "
-var webpack = require('webpack');
-var path = require('path');
-
-var BUILD_DIR = path.resolve(__dirname, 'public');
-var APP_DIR = path.resolve(__dirname, 'app');
-
-var config = {
-	entry: APP_DIR + '/index.jsx',
-	output: {
-	path: BUILD_DIR,
-	filename: 'build.js'
-	},
-  module : {
-    loaders : [{
-      test : /\.jsx?/,
-      include : APP_DIR,
-      loader : 'babel'
-    }]
-  }
-};
-
-module.exports = config;
-" > webpack.config.js
 
 npm i react react-dom -S
