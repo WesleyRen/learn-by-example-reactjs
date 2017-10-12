@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import Box from './BoxComponent.jsx';
 
-import TransitionGroup from 'react-addons-transition-group';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,14 +41,16 @@ class App extends React.Component {
             Add
           </button>
         </div>
-        <TransitionGroup>
+        <ReactCSSTransitionGroup transitionName="box-transition"
+          transitionEnterTimeout={500} transitionLeaveTimeout={500}
+          transitionAppear={true} transitionAppearTimeout={500}>
         {
           this.state.boxColors.map((color, i) =>
             <Box index={i} color={color}
               key={i}
               handleDelete={this.handleDeleteBox.bind(this)}/>)
         }
-        </TransitionGroup>
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
